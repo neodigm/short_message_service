@@ -687,16 +687,23 @@ function noThanks(isPayer) {
 .sms-ux {
 	height: 176px;
 	width: 100%;
-	background-color: #4fb466;
-	position: relative;
-	float: left;
+	background-color: #9c4a62;
+	position: fixed;
+	top: -112px;
+	left: 0;
+	z-index: 998;
+}
+.sms-ux-circ {
+	position: absolute;
+	right: 220px;
+	z-index: 999;
 }
 </style>
 <br><hr>
 <section class="sms-ux">
-	<div  class="column small=10 no-padding">
-	<img src="order_conf_files/sms_hmu_circ.png">
-	</div>		
+
+	<img class="sms-ux-circ" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
+	
 </section>
 
 
