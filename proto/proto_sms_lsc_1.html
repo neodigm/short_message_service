@@ -53,65 +53,10 @@ type="text/css">
 <link href="./proto_sms_lsc_1_files/global-1.ltd.css" rel="stylesheet" media="screen,print">
 <link href="./proto_sms_lsc_1_files/ltd-print.css" type="text/css" rel="stylesheet" media="print">
 
-
-
-
-<!-- siteId: LS -->
-
 		<!-- LS Responsive Styles/Overrides -->
-		<link href="./proto_sms_lsc_1_files/global.lsc.css" rel="stylesheet" media="screen,print">
-	
-
-
-<!-- TEST CONDITIONAL FOR LESS THAN IE9 -->
-<!--[if lt IE 9]><link rel="stylesheet" href="/media/global/styles/ie8-grid-foundation-4.css?20160915_0857_857_MDT" type="text/css" charset="utf-8"/><![endif]-->
-<!--[if IE 9]><link rel="stylesheet" href="/media/global/styles/ie9.css?20160915_0857_857_MDT" type="text/css" charset="utf-8"/><![endif]-->
-
-			
+		<link href="./proto_sms_lsc_1_files/global.lsc.css" rel="stylesheet" media="screen,print">	
 <script>
 		
-/*
-var CONTEXT_ROOT = '/';
-				var registerPostCheckoutOptions = {
-					url:  CONTEXT_ROOT + 'checkout/includes/shopping_cart/inc_register_prompt_acap.jsp',
-					type: "post",
-					beforeSend: function(){
-						var spinnerImg = CONTEXT_ROOT + "media/ltd/images/popups/spinner3-black.gif";
-						$('#footerModal h2').hide();
-						$('#footerModal .registerPromptForm').html('<img src="'+spinnerImg+'" />');
-					},
-					success: function(data){
-						var return_values = data.split(',');
-						if(typeof return_values !== 'undefined' && return_values.length == 2 && return_values[0] == 'session_expired') {
-							// session expired
-							var redirectUrl = return_values[1];
-							window.location = redirectUrl;
-						} else {
-							var result = $.trim(data);
-							if (result.indexOf("Thank you for registering with us") > -1) {
-								fireTealiumEvent({"e_login" : "t"});
-                            }
-
-							$('#footerModal h2').show();
-							$("#footerModal .registerPromptForm").html(result);
-						}
-					}
-				};
-
-				var registerNoThanks = {						
-					url: CONTEXT_ROOT + 'checkout/includes/order_commit_create_account_responsive.jsp',
-					target: '#footerModal .registerPromptForm',  // '',   //target element(s) to be updated with server response
-					type: 'post',
-					success: function(data){
-						var return_values = data.split(',');
-						if(typeof return_values !== 'undefined' && return_values.length == 2 && return_values[0] == 'session_expired') {
-							// session expired
-							var redirectUrl = return_values[1];
-							window.location = redirectUrl;
-						}
-					}
-				};
-	*/			
 </script>
 		<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large-only"><meta class="foundation-mq-large"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-small-only"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"><script type="text/javascript" src="./proto_sms_lsc_1_files/25783631-0" charset="utf-8" async=""></script><script type="text/javascript" async="" charset="utf-8" src="./proto_sms_lsc_1_files/utag.69.js" id="utag_ltd.lakeside_69"></script><link media="all" rel="stylesheet" type="text/css" href="./proto_sms_lsc_1_files/screen.css"></head>
 		<body id="page" class="off-canvas hide-extras LTD clearfix resp">
@@ -125,115 +70,6 @@ var CONTEXT_ROOT = '/';
 			
 			<section role="main">
 			
-				
-
-<script type="text/javascript">
-
-	var reg = new RegExp("[0-9][0-9][0-9][0-9][0-9][0-9]");
-	$(document).ready(function() {
-		// ie8 fix for cart button click
-		$(".ie8 .cart-button").on('click', function() {
-			location.href = $(this).closest("a").attr("href");
-		});
-		$("#quickSearch-query").autocomplete("/common/includes/inc_search_type_ahead.jsp", {
-			width: 400,
-			selectFirst: false,
-			cacheLength: 2,
-			max: 12,
-			extraParams: {environment: 'typeAhead_queries', sort: 'alpha', searchFrom: '',
-				Ntt:function(){
-					return $("#quickSearch-query").attr('value')+'*';
-				}
-			},
-			minChars: 6,
-			formatResult: function(data, value) {
-			return null;
-			}
-		});
-
-		$('#quickSearch-query').keyup( function(evt) {
-			if ("LS" != "LS")
-			if ((evt.keyCode >= 48 && evt.keyCode <= 90) || (evt.keyCode >= 96 && evt.keyCode <= 105) || (evt.keyCode == 189) || (evt.keyCode == 109)) {
-			var typedChars = $(this).val();
-			var firstSix = typedChars.substr(0, 6);
-			//-- only format input if it's a pin code
-			if (typedChars.length >= 6 && reg.test(firstSix)) {
-			$(this).val(formatSearchItemNumber($(this)));
-			}
-			}
-		});
-
-		$('#quickSearch-query').result(function(event, data, formatted) {
-			if (data) {
-			//-- just leave pin code in search box
-			var searchTerm = String(data);
-			var endOfPin = searchTerm.indexOf(" ");
-			$('#quickSearch-query').val(searchTerm.substr(0, endOfPin));
-			$('#quickSearch-submit').click();
-			}
-		});
-		$("#quickSearch-query-for-small").autocomplete("/common/includes/inc_search_type_ahead.jsp", {
-			width: 400,
-			selectFirst: false,
-			cacheLength: 2,
-			max: 12,
-			extraParams: {environment: 'typeAhead_queries', sort: 'alpha', searchFrom: '',
-				Ntt:function(){
-					return $("#quickSearch-query-for-small").attr('value')+'*';
-				}
-			},
-			minChars: 6,
-			formatResult: function(data, value) {
-			return null;
-			}
-		});
-
-		$('#quickSearch-query-for-small').keyup( function(evt) {
-			if ("LS" != "LS")
-			if ((evt.keyCode >= 48 && evt.keyCode <= 90) || (evt.keyCode >= 96 && evt.keyCode <= 105) || (evt.keyCode == 189) || (evt.keyCode == 109)) {
-			var typedChars = $(this).val();
-			var firstSix = typedChars.substr(0, 6);
-			//-- only format input if it's a pin code
-			if (typedChars.length >= 6 && reg.test(firstSix)) {
-			$(this).val(formatSearchItemNumber($(this)));
-			}
-			}
-		});
-
-		$('#quickSearch-query-for-small').result(function(event, data, formatted) {
-			if (data) {
-			//-- just leave pin code in search box
-			var searchTerm = String(data);
-			var endOfPin = searchTerm.indexOf(" ");
-			$('#quickSearch-query-for-small').val(searchTerm.substr(0, endOfPin));
-			$('#quickSearch-for-small-submit').click();
-			}
-		});
-	});
-	function formatSearchItemNumber(fieldId) {
-		var typedChars = fieldId.val();
-		typedChars = typedChars.replace(/-/g,"");
-		if (typedChars.length >= 10) {
-			typedChars = typedChars.substr(0, 6) + "-" + typedChars.substr(6, 4) + "-" + typedChars.substr(10);
-		} else {
-			if (typedChars.length >= 6) {
-				typedChars = typedChars.substr(0, 6) + "-" + typedChars.substr(6);
-			}
-		}
-		if (typedChars.substr(6, 1) == "-") {
-			typedChars = typedChars.toUpperCase();
-		}
-		return typedChars;
-	}
-
-	var CONTEXT_ROOT = '/';
-		var indexOfSemicolon = CONTEXT_ROOT.indexOf(';');
-	if (indexOfSemicolon > 0) {
-		CONTEXT_ROOT = CONTEXT_ROOT.substring(0, indexOfSemicolon);
-	}
-
-	//-->
-</script>
 
 
 	<!-- Server ID: test1b -->
@@ -301,97 +137,6 @@ var CONTEXT_ROOT = '/';
 	<li>Request A<br><a data-wsid="ws-catalogrequest" href="https://stage.lakeside.com/catalog_request/index.jsp">FREE Catalog</a></li>	
 					<li>Sign Up For<br><a data-reveal-id="emailSignUp" href="https://stage.lakeside.com/checkout/order_commit.jsp#" data-wsid="ws-emailsignup">Email Offers</a></li>
 					
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#emailSignUpModal').bind("keypress", function(e) {
-			var code = e.keyCode || e.which;
-			if (code == 13) {
-				e.preventDefault();
-				e.stopPropagation();
-				$('#emailSignUpModalSubmit').click();
-				return false;
-			}
-		});
-		$("#emailSignUpModalSubmit").click(function(event) {
-			var options = {
-				dataType: 'json',
-				success: addEmailSuccess,
-				error: errorMethod,
-				beforeSubmit: function() {
-					// email verification
-					var emailVal = $("#emailSubscribeAddressModal").val();
-					var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-					if (emailVal == '') {
-						$("#emailSubscribeAddressModal").val("Please Enter Your Email");
-						return false;
-					} else
-						if (!emailReg.test(emailVal)) {
-							$("#emailSubscribeAddressModal").add().css("color","#990000");
-							$("#emailSubscribeAddressModal").val(' Please Enter a Valid Email');
-
-							if( IsSmall() ){ 
-								//document.getElementById('emailSignUp').scrollIntoView();
-								$('html, body').animate({ scrollTop: ($('#emailSignUp').focus().offset().top-56) },400);
-							}  
-							return false;
-					}
-				}
-			};
-			$("#emailSignUpModal").ajaxSubmit(options);
-		});
-	});
-	function addEmailSuccess(responseText, statusText, xhr, $form) {
-		// A session timeout returns a single json object having status=session_expired
-		var status = responseText.status,
-			$html = $('html');
-		if(status == 'session_expired') {
-			window.location = responseText.redirect_url;
-		} else {
-			if ($html.hasClass('first-visit')) {
-				if ($html.hasClass('small-screen')) {
-					fireTealiumEvent({
-						"e_headerpopup_email_p" : "t",
-						"lead_type" : "email header popup phone signup"
-					});
-				}
-				else {
-					fireTealiumEvent({
-						"e_headerpopup_email" : "t",
-						"lead_type" : "email header popup signup"
-					});
-				}
-				$html.removeClass('first-visit');
-				$('#emailSubscribeAddressModal').val('');
-			}
-			else {
-				if ($html.hasClass('small-screen')) {
-					fireTealiumEvent({
-						"e_header_email_p" : "t",
-						"lead_type" : "email header phone signup"
-					});
-				}
-				else {
-					fireTealiumEvent({
-						"e_header_email" : "t",
-						"lead_type" : "email header signup"
-					});
-				}
-			}
-			// passing value of newEmailSignUp back via JSON obj
-			var newSignUp = responseText.newEmailSignUp;
-			if (newSignUp == true) {
-				$('#showEmailSignUpModalNew').trigger('click');
-			} else {
-				$('#showEmailSignUpModalExisting').trigger('click');
-			};
-		}
-	}
-	function errorMethod(responseText, statusText, xhr, $form) {
-			$('#showEmailSignUpModal').trigger('click');
-	}
-</script>
-
 <a class="radius tiny shop" data-reveal-id="emailSignUp" href="https://stage.lakeside.com/checkout/order_commit.jsp#" id="showEmailSignUpModal" data-wsid="ws-emailsignup"></a>
 <div data-reveal="" class="reveal-modal emailSignUp" id="emailSignUp" style="visibility: hidden; display: none;">
 	<div class="row">
@@ -680,35 +425,6 @@ function noThanks(isPayer) {
 					</div>
 					
 	</section>
-
-
-
-<style>
-.sms-ux {
-	height: 176px;
-	width: 100%;
-	background-color: #9c4a62;
-	position: fixed;
-	top: -112px;
-	left: 0;
-	z-index: 998;
-}
-.sms-ux-circ {
-	position: absolute;
-	right: 220px;
-	z-index: 999;
-}
-</style>
-<br><hr>
-<section class="sms-ux">
-
-	<img class="sms-ux-circ" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
-	
-</section>
-
-
-
-
 
 		<hr>	</section>	<!--//- the following section added for demo purposes only -->	
 	</main>	<!-- END MAIN .row -->  	</div>	
@@ -2300,8 +2016,30 @@ $BV.SI.trackTransactionPageView({
 	"nickname" : ""
 });
 </script>
-
 <!-- proto styles -->
+<style>
+.sms-ux {
+	height: 176px;
+	width: 100%;
+	background-color: #9c4a62;
+	position: fixed;
+	top: -112px;
+	left: 0;
+	z-index: 998;
+}
+.sms-ux-circ {
+	position: absolute;
+	right: 220px;
+	z-index: 999;
+}
+</style>
+<!-- proto styles -->
+<br>
+<hr>
+<section class="sms-ux">
+	<img class="sms-ux-circ" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
+</section>
+<!-- proto script -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
@@ -2314,8 +2052,37 @@ $BV.SI.trackTransactionPageView({
     //document.querySelector('.scrollpos').innerHTML = data.curTop;
     //}
     //});
+$(document).ready(function() {    
+	$('.ep_mnu').addClass('ep_or').clone().insertAfter('.ep_mnu').addClass('ep_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_or').hide();
+
+	function ep_mnu_top() {
+	var iPs=$('.ep_or').offset(), iTp=iPs.top;               
+		if ($(window).scrollTop() >= (iTp)) {
+			oOrEl=$('.ep_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
+			$('.ep_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
+			$('.ep_or').css('visibility','hidden');
+		} else {
+			$('.ep_cl').hide();
+			$('.ep_or').css('visibility','visible');
+		}
+	}
+	oScrID = setInterval(ep_mnu_top, 24);
+});
+
 </script>
-<!-- proto styles -->
+<!-- proto script -->
+<!-- proto templates -->
+	<section class="ep_mnu ep_or">
+	<nav class="row show-for-small" style="padding: 0;margin-bottom: 8px;">
+		<div class="small-10 no-padding columns">
+			<div class="top_stp_1 cmd_stp resp_top_stp resp_top_stp_e text-center" data-step="1">STEP 1</div>
+			<div class="top_stp_2 cmd_stp resp_top_stp resp_top_stp_d text-center" data-step="2">STEP 2</div>
+			<div class="top_stp_3 cmd_stp resp_top_stp resp_top_stp_d text-center" data-step="3">STEP 3</div>
+		</div>
+	</nav>
+	</section>
+<!-- proto templates -->
+
 
 <!-- LTD Responsive Footer Scripts -->
 <script src="./proto_sms_lsc_1_files/lib.ltd.footer.js"></script>
