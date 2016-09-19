@@ -313,7 +313,18 @@ function noThanks(isPayer) {
 	* START MAIN content area
 	**************************/ -->
 	<main class="row clearfix">
+<!-- proto mu -->
+<!-- proto templates -->
+	<section class="ep_sms_mnu ep_sms_or">
 
+<section class="sms-ux">
+	<img class="sms-ux-circ" src="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" data-isrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
+</section>
+
+	</section>
+<!-- proto templates -->
+
+<!-- proto mu -->
 		<section class="row congrats-create-account">
 			<div class="column medium-10 no-padding-left no-padding-right align-center">
 				<!-- Main Page Title -->
@@ -347,7 +358,7 @@ function noThanks(isPayer) {
 				* START Create Account form
 				**************************/ -->				
 				
-				<form id="loginPer" novalidate="novalidate" action="https://stage.lakeside.com/checkout/order_commit.jsp?_DARGS=/checkout/includes/order_commit_create_account_responsive.jsp.newPersonalAccount" class="resp_input_brand" method="post"><input name="_dyncharset" value="ISO-8859-1" type="hidden"><input name="_dynSessConf" value="-7297267989309009064" type="hidden"><input spellcheck="false" placeholder="* First Name" autocomplete="off" type="text" autocapitalize="off" aria-label="First Name" id="create_account_first_name" title="First Name" maxlength="19" name="/atg/userprofiling/ProfileFormHandler.address.firstName" value="Clark" autocorrect="off" aria-required="true"><input name="_D:/atg/userprofiling/ProfileFormHandler.address.firstName" value=" " type="hidden"><input spellcheck="false" placeholder="* Last Name" autocomplete="off" type="text" autocapitalize="off" aria-label="Last Name" id="create_account_last_name" title="Last Name" maxlength="20" name="/atg/userprofiling/ProfileFormHandler.address.lastName" value="Griswold" autocorrect="off" aria-required="true"><input name="_D:/atg/userprofiling/ProfileFormHandler.address.lastName" value=" " type="hidden"><input spellcheck="false" placeholder="* Email" class="createaccount-email no-margin-bottom" autocomplete="off" type="email" autocapitalize="off" aria-label="Email" id="create_account_email" title="Email" maxlength="37" name="/atg/userprofiling/ProfileFormHandler.value.email" value="skrause1@ltdcommodities.com" autocorrect="off" aria-required="true"><input name="_D:/atg/userprofiling/ProfileFormHandler.value.email" value=" " type="hidden">
+				<form id="loginPer" novalidate="novalidate" action="https://stage.lakeside.com/checkout/order_commit.jsp?_DARGS=/checkout/includes/order_commit_create_account_responsive.jsp.newPersonalAccount" class="resp_input_brand" method="post"><input name="_dyncharset" value="ISO-8859-1" type="hidden"><input name="_dynSessConf" value="-7297267989309009064" type="hidden"><input spellcheck="false" placeholder="* First Name" autocomplete="off" type="text" autocapitalize="off" aria-label="First Name" id="create_account_first_name" title="First Name" maxlength="19" name="/atg/userprofiling/ProfileFormHandler.address.firstName" value="Clark" autocorrect="off" aria-required="true"><input name="_D:/atg/userprofiling/ProfileFormHandler.address.firstName" value=" " type="hidden"><input spellcheck="false" placeholder="* Last Name" autocomplete="off" type="text" autocapitalize="off" aria-label="Last Name" id="create_account_last_name" title="Last Name" maxlength="20" name="/atg/userprofiling/ProfileFormHandler.address.lastName" value="Griswold" autocorrect="off" aria-required="true"><input name="_D:/atg/userprofiling/ProfileFormHandler.address.lastName" value=" " type="hidden"><input spellcheck="false" placeholder="* Email" class="createaccount-email no-margin-bottom" autocomplete="off" type="email" autocapitalize="off" aria-label="Email" id="create_account_email" title="Email" maxlength="37" name="/atg/userprofiling/ProfileFormHandler.value.email" value="cgriswold@ltdcommodities.com" autocorrect="off" aria-required="true"><input name="_D:/atg/userprofiling/ProfileFormHandler.value.email" value=" " type="hidden">
 
 					<!-- /*************************
 					* standard form error messaging below
@@ -2022,30 +2033,23 @@ $BV.SI.trackTransactionPageView({
 	height: 176px;
 	width: 100%;
 	background-color: #9c4a62;
-	position: fixed;
-	top: -112px;
-	left: 0;
-	z-index: 998;
+	z-index: 76;
 }
 .sms-ux-circ {
-	position: absolute;
-	right: 220px;
-	z-index: 999;
+	z-index: 77;
+	-webkit-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+	-moz-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+	box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
 }
 </style>
 <!-- proto styles -->
-<br>
-<hr>
-<section class="sms-ux">
-	<img class="sms-ux-circ" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
-</section>
+
 <!-- proto script -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.1/vivus.min.js"></script>
-<script type="text/javascript" src="https://vjs.zencdn.net/5.11.6/video.js"></script>
-<script type="text/javascript" src="js/skrollr.min.js"></script>
+<!--  <script type="text/javascript" src="js/skrollr.min.js"></script>  -->
 <script type="text/javascript">
     //var s = skrollr.init({
     //render: function(data) {
@@ -2053,35 +2057,24 @@ $BV.SI.trackTransactionPageView({
     //}
     //});
 $(document).ready(function() {    
-	$('.ep_mnu').addClass('ep_or').clone().insertAfter('.ep_mnu').addClass('ep_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_or').hide();
+	$('.ep_sms_mnu').addClass('ep_sms_or').clone().insertAfter('.ep_sms_mnu').addClass('ep_sms_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_sms_or').hide();
 
-	function ep_mnu_top() {
-	var iPs=$('.ep_or').offset(), iTp=iPs.top;               
+	function ep_sms_mnu_top() {
+	var iPs=$('.ep_sms_or').offset(), iTp=iPs.top;               
 		if ($(window).scrollTop() >= (iTp)) {
-			oOrEl=$('.ep_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
-			$('.ep_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
-			$('.ep_or').css('visibility','hidden');
+			oOrEl=$('.ep_sms_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
+			$('.ep_sms_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
+			$('.ep_sms_or').css('visibility','hidden');
 		} else {
-			$('.ep_cl').hide();
-			$('.ep_or').css('visibility','visible');
+			$('.ep_sms_cl').hide();
+			$('.ep_sms_or').css('visibility','visible');
 		}
 	}
-	oScrID = setInterval(ep_mnu_top, 24);
+	oScrID = setInterval(ep_sms_mnu_top, 96);
 });
 
 </script>
 <!-- proto script -->
-<!-- proto templates -->
-	<section class="ep_mnu ep_or">
-	<nav class="row show-for-small" style="padding: 0;margin-bottom: 8px;">
-		<div class="small-10 no-padding columns">
-			<div class="top_stp_1 cmd_stp resp_top_stp resp_top_stp_e text-center" data-step="1">STEP 1</div>
-			<div class="top_stp_2 cmd_stp resp_top_stp resp_top_stp_d text-center" data-step="2">STEP 2</div>
-			<div class="top_stp_3 cmd_stp resp_top_stp resp_top_stp_d text-center" data-step="3">STEP 3</div>
-		</div>
-	</nav>
-	</section>
-<!-- proto templates -->
 
 
 <!-- LTD Responsive Footer Scripts -->
