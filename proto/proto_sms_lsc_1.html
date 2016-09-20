@@ -2112,7 +2112,7 @@ cursor: pointer;
 $(document).ready(function() {
 	ep_sms_size();
 	
-console.log( jsMQ.isSmall() );
+
 
 	jsMQcallback = $.Callbacks(), jsMQcurrent = "";
 	var jsMQ = {
@@ -2135,6 +2135,8 @@ console.log( jsMQ.isSmall() );
 		isLarge  : function(){ return ( jsMQ.getVW()=="l" ) ? true : false; }
 	};
 	setInterval(jsMQ.pubVW, 1800);
+
+console.log( jsMQ.isSmall() );
 
  	jsMQcallback.add( ep_sms_size );
 
