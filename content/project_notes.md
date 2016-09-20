@@ -2,7 +2,7 @@ PROJECT NOTES
 =============
 
 
-Objective: Enchanted Omini-chanel Micro-Moment - Predictable information scent
+Objective: Enchanted Omini-chanel Micro-Moment - Predictable information scent - Personalized Microcopy
 
 Implementation: Ever present progressive disclosure
 Voice - iPhone Metaphone - Txt inspired
