@@ -306,9 +306,6 @@ function noThanks(isPayer) {
 </script>
 
 
-
-
-
 	<!-- /*************************
 	* START MAIN content area
 	**************************/ -->
@@ -318,7 +315,7 @@ function noThanks(isPayer) {
 	<section class="ep_sms_mnu ep_sms_or">
 
 <section class="sms-ux">
-	<img class="sms-ux-circ" data-isrc="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
+	<img class="sms-ux-circ" data-isrc="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" data-xsrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg">
 </section>
 
 	</section>
@@ -2058,9 +2055,11 @@ position: relative;
 top: -104px;
 z-index: 1001;
 margin-left: 52vw;
+/*
 -webkit-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
 -moz-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
 box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+*/
 cursor: pointer;
 }
 </style>
@@ -2088,13 +2087,11 @@ $(document).ready(function() {
 			oOrEl=$('.ep_sms_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
 			$('.ep_sms_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
 			$('.ep_sms_or').css('visibility','hidden');
-$(".sms-ux").removeClass("sms-ux__mid");
-$(".sms-ux").addClass("sms-ux__top");
+			$(".sms-ux").removeClass("sms-ux__mid").addClass("sms-ux__top");
 		} else {
 			$('.ep_sms_cl').hide();
 			$('.ep_sms_or').css('visibility','visible');
-$(".sms-ux").removeClass("sms-ux__top");
-$(".sms-ux").addClass("sms-ux__mid");
+			$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
 		}
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
