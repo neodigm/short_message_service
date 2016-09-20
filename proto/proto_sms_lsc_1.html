@@ -17,18 +17,7 @@
 			<meta name="description" content="">
 			<meta name="keywords" content="">
 			
-			<!-- Begin Monetate ExpressTag Sync v8. Place at start of document head. DO NOT ALTER. -->
-<link rel="dns-prefetch" href="https://d.monetate.net/"><link rel="dns-prefetch" href="https://sb.monetate.net/"><script type="text/javascript" async="" src="./proto_sms_lsc_1_files/bv-analytics.js"></script><script type="text/javascript" async="" src="./proto_sms_lsc_1_files/ecommerce.js"></script><script type="text/javascript" async="" charset="utf-8" src="./proto_sms_lsc_1_files/fbevents.js" id="utag_58"></script><script async="" id="tealium-tag-7110" src="./proto_sms_lsc_1_files/analytics.js"></script><script type="text/javascript" async="" charset="utf-8" src="./proto_sms_lsc_1_files/collect.js" id="utag_52"></script><script src="./proto_sms_lsc_1_files/utag.js" type="text/javascript" async=""></script><script type="text/javascript" src="./proto_sms_lsc_1_files/custom.js" charset="utf-8" async=""></script><script type="text/javascript">
-var monetateT = new Date().getTime();
-(function() {
-    var p = document.location.protocol;
-    if (p == "http:" || p == "https:") {
-        var m = document.createElement("script"); m.type = "text/javascript"; m.src = (p == "https:" ? "https://s" : "https://") + "e.monetate.net/js/2/a-4907de24/d/stage.lakeside.com/entry.js";
-        var e = document.createElement("div"); e.appendChild(m); document.write(e.innerHTML);
-    }
-})();
-</script><script type="text/javascript" src="./proto_sms_lsc_1_files/entry.js"></script>
-<!-- End Monetate tag. -->
+
 <!-- LTD Responsive Header Scripts -->
 <script src="./proto_sms_lsc_1_files/lib.ltd.header.js"></script>
 
@@ -311,12 +300,12 @@ function noThanks(isPayer) {
 <section class="ep_sms_mnu ep_sms_or">
 <section class="sms-ux">
 
-	<div style="padding: 8px;">
+	<aside class="sms-ux-caption">
 		<p class="caption--p__roboto">
 Ipsum Loren mi tracus vonl es speci en!
 		</p>
-	</div>
-	
+	</aside>
+
 	<img class="sms-ux-circ" data-isrc="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" data-xsrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg">
 </section>
 
@@ -2053,6 +2042,11 @@ body {-webkit-filter: grayscale(1);}
 	font-weight: 400;
 	line-height: 1.5;
 }
+.sms-ux-caption {
+	position: absolute;
+	width: 44vw;
+	padding: 8px;
+}
 .sms-ux {
 width: 100%;
 background-color: #9c4a62;
@@ -2079,31 +2073,25 @@ overflow: hidden;
 .sms-ux-circ {
 position: relative;
 top: -88px;
-xxxxleft: 58vw;
 z-index: 1001;
 cursor: pointer;
-/*
--webkit-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
--moz-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
-*/
 }
 @media only screen and (max-width: 47.9375em) {
 	/* small */
-	.sms-ux-circ {
-		xxxxleft: 48vw;
+	.AAAsms-ux-circ {
+		lleft: 48vw;
 	}
 }
 @media only screen and (min-width:48em) and (max-width:61.1875em){
 	/* medium */
-	.sms-ux-circ {
-		xxxxeft: 56vw;
+	.AAAsms-ux-circ {
+		left: 56vw;
 	}
 }
 @media only screen and (min-width: 90em) {
 	/* large up */
-	.sms-ux-circ {
-		xxxxleft: 58vw;
+	.AAAsms-ux-circ {
+		lleft: 58vw;
 	}
 }
 </style>
@@ -2122,13 +2110,19 @@ box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
     //}
     //});
 $(document).ready(function() {
-
-	$(".sms-ux-circ").css("left", ($(".ep_sms_or").css("width").slice(0, -2) - 184));
+	//jsMQcallback.add( ep_sms_size );
+	ep_sms_size();
+	
+console.log( jsMQ.isSmall() );
 
 	$('.ep_sms_mnu').addClass('ep_sms_or').clone().insertAfter('.ep_sms_mnu').addClass('ep_sms_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_sms_or').hide();
 
+	function ep_sms_size() {
+		$(".sms-ux-circ").css("left", ($(".ep_sms_or").css("width").slice(0, -2) - 184));
+	}
+
 	function ep_sms_mnu_top() {
-	var iPs=$('.ep_sms_or').offset(), iTp=iPs.top;               
+		var iPs=$('.ep_sms_or').offset(), iTp=iPs.top;               
 		if ($(window).scrollTop() >= (iTp)) {
 			oOrEl=$('.ep_sms_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
 			$('.ep_sms_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
