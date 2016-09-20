@@ -318,7 +318,7 @@ function noThanks(isPayer) {
 	<section class="ep_sms_mnu ep_sms_or">
 
 <section class="sms-ux">
-	<img class="sms-ux-circ" src="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" data-isrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
+	<img class="sms-ux-circ" data-isrc="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png">
 </section>
 
 	</section>
@@ -2030,16 +2030,38 @@ $BV.SI.trackTransactionPageView({
 <!-- proto styles -->
 <style>
 .sms-ux {
-	height: 176px;
-	width: 100%;
-	background-color: #9c4a62;
-	z-index: 76;
+
+width: 100%;
+background-color: #9c4a62;
+z-index: 1000;
+}
+.sms-ux__top {
+-webkit-transition: height 1.8s;
+-moz-transition: height 1.8s;
+transition: height 1.8s;
+height: 48px;
+}
+.sms-ux__mid {
+-webkit-transition: height 1.8s;
+-moz-transition: height 1.8s;
+transition: height 1.8s;
+height: 176px;
+overflow: hidden;
+}
+.sms-ux-cont {
+height: 208px;
+width: 208px;
+overflow: hidden;
 }
 .sms-ux-circ {
-	z-index: 77;
-	-webkit-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
-	-moz-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
-	box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+position: relative;
+top: -104px;
+z-index: 1001;
+margin-left: 52vw;
+-webkit-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+-moz-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
+cursor: pointer;
 }
 </style>
 <!-- proto styles -->
@@ -2056,7 +2078,8 @@ $BV.SI.trackTransactionPageView({
     //document.querySelector('.scrollpos').innerHTML = data.curTop;
     //}
     //});
-$(document).ready(function() {    
+$(document).ready(function() {
+
 	$('.ep_sms_mnu').addClass('ep_sms_or').clone().insertAfter('.ep_sms_mnu').addClass('ep_sms_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_sms_or').hide();
 
 	function ep_sms_mnu_top() {
@@ -2065,9 +2088,13 @@ $(document).ready(function() {
 			oOrEl=$('.ep_sms_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
 			$('.ep_sms_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
 			$('.ep_sms_or').css('visibility','hidden');
+$(".sms-ux").removeClass("sms-ux__mid");
+$(".sms-ux").addClass("sms-ux__top");
 		} else {
 			$('.ep_sms_cl').hide();
 			$('.ep_sms_or').css('visibility','visible');
+$(".sms-ux").removeClass("sms-ux__top");
+$(".sms-ux").addClass("sms-ux__mid");
 		}
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
