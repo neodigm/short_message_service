@@ -308,20 +308,20 @@ function noThanks(isPayer) {
 	<main class="row clearfix">
 <!-- proto mu -->
 <!-- proto templates -->
-	<section class="ep_sms_mnu ep_sms_or">
-
+<section class="ep_sms_mnu ep_sms_or">
 <section class="sms-ux">
+
 	<div style="padding: 8px;">
 		<p class="caption--p__roboto">
 Ipsum Loren mi tracus vonl es speci en!
 		</p>
 	</div>
+	
 	<img class="sms-ux-circ" data-isrc="http://placeholdit.imgix.net/~text?txtsize=33&txt=sms-208&w=208&h=208" data-xsrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.png" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg">
 </section>
 
 	</section>
 <!-- proto templates -->
-
 <!-- proto mu -->
 		<section class="row congrats-create-account">
 			<div class="column medium-10 no-padding-left no-padding-right align-center">
@@ -2072,37 +2072,38 @@ height: 176px;
 overflow: hidden;
 }
 .sms-ux-cont {
-height: 208px;
-width: 208px;
+height: 176px;
+width: 176px;
 overflow: hidden;
 }
 .sms-ux-circ {
 position: relative;
-top: -104px;
+top: -88px;
+xxxxleft: 58vw;
 z-index: 1001;
+cursor: pointer;
 /*
 -webkit-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
 -moz-box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
 box-shadow: 2px 2px 4px 4px rgba(156,74,98,0.1);
 */
-cursor: pointer;
 }
 @media only screen and (max-width: 47.9375em) {
 	/* small */
 	.sms-ux-circ {
-		margin-left: 200px;
+		xxxxleft: 48vw;
 	}
 }
 @media only screen and (min-width:48em) and (max-width:61.1875em){
 	/* medium */
 	.sms-ux-circ {
-		margin-left: 420px;
+		xxxxeft: 56vw;
 	}
 }
 @media only screen and (min-width: 90em) {
 	/* large up */
 	.sms-ux-circ {
-		margin-left: 856px;
+		xxxxleft: 58vw;
 	}
 }
 </style>
@@ -2122,6 +2123,8 @@ cursor: pointer;
     //});
 $(document).ready(function() {
 
+	$(".sms-ux-circ").css("left", ($(".ep_sms_or").css("width").slice(0, -2) - 184));
+
 	$('.ep_sms_mnu').addClass('ep_sms_or').clone().insertAfter('.ep_sms_mnu').addClass('ep_sms_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_sms_or').hide();
 
 	function ep_sms_mnu_top() {
@@ -2136,6 +2139,7 @@ $(document).ready(function() {
 			$('.ep_sms_or').css('visibility','visible');
 			$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
 		}
+
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
 });
