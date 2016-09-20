@@ -2110,10 +2110,33 @@ cursor: pointer;
     //}
     //});
 $(document).ready(function() {
-	//jsMQcallback.add( ep_sms_size );
 	ep_sms_size();
 	
 console.log( jsMQ.isSmall() );
+
+	jsMQcallback = $.Callbacks(), jsMQcurrent = "";
+	var jsMQ = {
+		getVW : function(){
+			vw=jQuery(window).width();
+			if(vw  <= 480) return "s";
+			if((vw >= 480) && (vw <= 748)) return "sl";
+			if((vw >= 749) && (vw <= 965)) return "m";
+			if(vw  >= 966) return "l"; 
+		},
+		pubVW : function(){
+			vw = jsMQ.getVW(); 
+			if(jsMQcurrent != vw){
+				jsMQcurrent = vw;
+				jsMQcallback.fire(vw);
+			}
+		},
+		isSmall  : function(){ return ( jsMQ.getVW().charAt(0)=="s" ) ? true : false; },
+		isMedium : function(){ return ( jsMQ.getVW()=="m" ) ? true : false; },
+		isLarge  : function(){ return ( jsMQ.getVW()=="l" ) ? true : false; }
+	};
+	setInterval(jsMQ.pubVW, 1800);
+
+ 	jsMQcallback.add( ep_sms_size );
 
 	$('.ep_sms_mnu').addClass('ep_sms_or').clone().insertAfter('.ep_sms_mnu').addClass('ep_sms_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_sms_or').hide();
 
