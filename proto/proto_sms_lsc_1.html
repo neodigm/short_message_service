@@ -43,7 +43,24 @@ type="text/css">
 <script>
 		
 </script>
-		<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large-only"><meta class="foundation-mq-large"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-small-only"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"><script type="text/javascript" src="./proto_sms_lsc_1_files/25783631-0" charset="utf-8" async=""></script><script type="text/javascript" async="" charset="utf-8" src="./proto_sms_lsc_1_files/utag.69.js" id="utag_ltd.lakeside_69"></script><link media="all" rel="stylesheet" type="text/css" href="./proto_sms_lsc_1_files/screen.css"></head>
+<!--
+		<meta class="foundation-data-attribute-namespace">
+		<meta class="foundation-mq-xxlarge">
+		<meta class="foundation-mq-xlarge-only">
+		<meta class="foundation-mq-xlarge">
+		<meta class="foundation-mq-large-only">
+		<meta class="foundation-mq-large">
+		<meta class="foundation-mq-medium-only">
+		<meta class="foundation-mq-medium">
+		<meta class="foundation-mq-small-only">
+		<meta class="foundation-mq-small">
+		<meta class="foundation-mq-topbar">
+
+		<script type="text/javascript" src="./proto_sms_lsc_1_files/25783631-0" charset="utf-8" async=""></script>
+		<script type="text/javascript" async="" charset="utf-8" src="./proto_sms_lsc_1_files/utag.69.js" id="utag_ltd.lakeside_69"></script>
+		<link media="all" rel="stylesheet" type="text/css" href="./proto_sms_lsc_1_files/screen.css">
+-->		
+</head>
 		<body id="page" class="off-canvas hide-extras LTD clearfix resp">
 
 			<!-- screen size detection -->
@@ -300,9 +317,9 @@ function noThanks(isPayer) {
 <section class="ep_sms_mnu ep_sms_or">
 <section class="sms-ux">
 
-	<aside class="sms-ux-caption">
+	<aside class="js-sms-ux-caption sms-ux-caption__top">
 		<p class="caption--p__roboto">
-Ipsum Loren mi tracus vonl es speci en!
+<span style="font-style: italic;">Easy and Convenient</span>&nbsp; Know instantly when your order has shipped.
 		</p>
 	</aside>
 
@@ -2019,7 +2036,7 @@ $BV.SI.trackTransactionPageView({
 body {-webkit-filter: grayscale(1);}
 .caption--p__roboto{
 	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 22px !important;
+	font-size: 22px;
 	font-weight: 500;
 	line-height: 1.5;
 	color: #FFF;
@@ -2042,10 +2059,13 @@ body {-webkit-filter: grayscale(1);}
 	font-weight: 400;
 	line-height: 1.5;
 }
-.sms-ux-caption {
+.sms-ux-caption__mid {
 	position: absolute;
 	width: 44vw;
 	padding: 8px;
+}
+.sms-ux-caption__top {
+	display: none;
 }
 .sms-ux {
 width: 100%;
@@ -2078,20 +2098,20 @@ cursor: pointer;
 }
 @media only screen and (max-width: 47.9375em) {
 	/* small */
-	.AAAsms-ux-circ {
-		lleft: 48vw;
+	.sms-ux-caption__mid > p {
+		font-size: 12px !important;
 	}
 }
 @media only screen and (min-width:48em) and (max-width:61.1875em){
 	/* medium */
-	.AAAsms-ux-circ {
-		left: 56vw;
+	.sms-ux-caption__mid > p {
+		font-size: 22px !important;
 	}
 }
-@media only screen and (min-width: 90em) {
+@media only screen and (min-width: 64em) {
 	/* large up */
-	.AAAsms-ux-circ {
-		lleft: 58vw;
+	.sms-ux-caption__mid > p {
+		font-size: 32px !important;
 	}
 }
 </style>
@@ -2101,7 +2121,7 @@ cursor: pointer;
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.1/vivus.min.js"></script>
+<!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.1/vivus.min.js"></script>  -->
 <!--  <script type="text/javascript" src="js/skrollr.min.js"></script>  -->
 <script type="text/javascript">
     //var s = skrollr.init({
@@ -2111,8 +2131,6 @@ cursor: pointer;
     //});
 $(document).ready(function() {
 	ep_sms_size();
-	
-
 
 	jsMQcallback = $.Callbacks(), jsMQcurrent = "";
 	var jsMQ = {
@@ -2136,8 +2154,6 @@ $(document).ready(function() {
 	};
 	setInterval(jsMQ.pubVW, 1800);
 
-console.log( jsMQ.isSmall() );
-
  	jsMQcallback.add( ep_sms_size );
 
 	$('.ep_sms_mnu').addClass('ep_sms_or').clone().insertAfter('.ep_sms_mnu').addClass('ep_sms_cl').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('ep_sms_or').hide();
@@ -2153,12 +2169,13 @@ console.log( jsMQ.isSmall() );
 			$('.ep_sms_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
 			$('.ep_sms_or').css('visibility','hidden');
 			$(".sms-ux").removeClass("sms-ux__mid").addClass("sms-ux__top");
+			$(".js-sms-ux-caption").removeClass("sms-ux-caption__mid").addClass("sms-ux-caption__top");
 		} else {
 			$('.ep_sms_cl').hide();
 			$('.ep_sms_or').css('visibility','visible');
 			$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
+			$(".js-sms-ux-caption").removeClass("sms-ux-caption__top").addClass("sms-ux-caption__mid");
 		}
-
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
 });
@@ -2171,4 +2188,4 @@ console.log( jsMQ.isSmall() );
 <script src="./proto_sms_lsc_1_files/lib.ltd.footer.js"></script>
 
 		
-<div id="quickView1"></div><div style="display: none;"><img src="./proto_sms_lsc_1_files/track_conversion" style="display:none" width="0" height="0" alt="track_conversion?payload=%7B%22cart%22%3A%5B%7B%22item%22%3A%22prod2010372%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%228.95%22%2C%22unique_id%22%3A%221164700%22%7D%2C%7B%22item%22%3A%22prod2010622%22%2C%22quantity%22%3A%223%22%2C%22price%22%3A%227.95%22%2C%22unique_id%22%3A%221167801%22%7D%2C%7B%22item%22%3A%22prod1900161%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%227.95%22%2C%22unique_id%22%3A%221157868%22%7D%2C%7B%22item%22%3A%22prod1970177%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%226.95%22%2C%22unique_id%22%3A%221162248%22%7D%2C%7B%22item%22%3A%22prod1940012%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%225.95%22%2C%22unique_id%22%3A%221158046%22%7D%2C%7B%22item%22%3A%22prod2230031%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%2216.95%22%2C%22unique_id%22%3A%221160956%22%7D%2C%7B%22item%22%3A%22prod2230031%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%2216.95%22%2C%22unique_id%22%3A%221160957%22%7D%2C%7B%22item%22%3A%22prod1230788%22%2C%22quantity%22%3A%222%22%2C%22price%22%3A%223.81%22%2C%22unique_id%22%3A%221138721%22%7D%2C%7B%22item%22%3A%22prod1790048%22%2C%22quantity%22%3A%221%22%2C%22price%22%3A%224.95%22%2C%22unique_id%22%3A%221145887%22%7D%5D%2C%22order_number%22%3A%22506546980173%22%2C%22shipping%22%3A%2219.99%22%2C%22user_info%22%3A%7B%22email%22%3A%22skrause1%40ltdcommodities.com%22%2C%22details%22%3A%7B%22encryptedProfileId%22%3A%22WqVasWwKxw7gyqOlW3VNyQ%253D%253D%22%7D%7"></div><div class="bv-verify-css-loaded" style="height: 0px; width: 0px; border: 0px;"></div></body></html>
+</body></html>
