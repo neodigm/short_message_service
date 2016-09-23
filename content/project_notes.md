@@ -1,6 +1,13 @@
 PROJECT NOTES
 =============
 
+STATES:
+TOP
+MID
+SLEEP
+AMBIENT
+DATA ENTRY
+
 
 Objective: Enchanted Omini-chanel Micro-Moment - Predictable information scent - Personalized Microcopy
 

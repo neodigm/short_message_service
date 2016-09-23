@@ -315,17 +315,15 @@ function noThanks(isPayer) {
 <!-- proto mu -->
 <!-- proto templates -->
 <section class="ep_sms_mnu ep_sms_or">
-<section class="sms-ux">
-
-	<aside class="js-sms-ux-caption sms-ux-caption__top">
-		<p class="caption--p__roboto">
-<span style="font-style: italic;">Easy and Convenient</span>&nbsp; Know instantly when your order has shipped.
-		</p>
-	</aside>
-	<img class="sms-ux-circ" data-isrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg" src="">
-</section>
-
+	<section class="sms-ux">
+		<aside class="js-sms-ux-caption sms-ux-caption__top">
+			<p class="caption--p__roboto">
+				<span style="font-style: italic;">Easy and Convenient</span>&nbsp; Know instantly when your order has shipped.
+			</p>
+		</aside>
+		<img class="sms-ux-circ" data-isrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg" src="">
 	</section>
+</section>
 <!-- proto templates -->
 <!-- proto mu -->
 		<section class="row congrats-create-account">
@@ -2040,6 +2038,10 @@ $BV.SI.trackTransactionPageView({
 	line-height: 1.5;
 	color: #FFF;
 }
+.caption--p__roboto > span{
+	font-style: italic;
+	color: #00FF48;
+}
 .caption--p__rocksalt{
 	font-family: "Rock Salt", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.4em;
@@ -2128,6 +2130,13 @@ cursor: pointer;
     //});
 $(document).ready(function() {
 	ep_sms_size();
+	var sms_ux = {
+		"su_state" : "MID_OPEN",
+		"TOP_OPEN"    : "TOP_OPEN",
+		"TOP_CLOSED"  : "TOP_CLOSED",
+		"MID_OPEN"    : "MID_OPEN",
+		"MID_CLOSED"  : "MID_CLOSED"
+	};
 
 	jsMQcallback = $.Callbacks(), jsMQcurrent = "";
 	var jsMQ = {
@@ -2150,7 +2159,6 @@ $(document).ready(function() {
 		isLarge  : function(){ return ( jsMQ.getVW()=="l" ) ? true : false; }
 	};
 	setInterval(jsMQ.pubVW, 1800);
-
  	jsMQcallback.add( ep_sms_size );
 
 	$(".ep_sms_mnu").addClass("ep_sms_or").clone().insertAfter(".ep_sms_mnu").addClass("ep_sms_cl").css("position","fixed").css("top","0").css("margin-top","0").css("z-index","500").removeClass("ep_sms_or").hide();
@@ -2176,6 +2184,12 @@ $(document).ready(function() {
 		}
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
+	$(".sms-ux-circ").on("click", function( e ){
+console.log( "sms_ux.su_state | " + sms_ux.su_state );
+		$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
+		e.preventDefault();
+	});
+
 });
 
 </script>
