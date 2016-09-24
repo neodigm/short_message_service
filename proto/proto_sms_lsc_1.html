@@ -321,7 +321,7 @@ function noThanks(isPayer) {
 				<span style="font-style: italic;">Easy and Convenient</span>&nbsp; Know instantly when your order has shipped.
 			</p>
 		</aside>
-		<img class="sms-ux-circ" data-isrc="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg" src="">
+		<img id="" class="sms-ux-circ" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg">
 	</section>
 </section>
 <!-- proto templates -->
@@ -344,7 +344,6 @@ function noThanks(isPayer) {
 				**************************/ -->
 				
 	<p>If you have not shopped online with us before, please take a moment to create an account. As a registered Lakeside.com customer, you'll enjoy exclusive benefits that make shopping quicker and easier, such as saved addresses and payment methods, order tracking and history, and more!</p>				
-
 			</div>
 			<!-- /*************************
 			* END Left Container Section
@@ -1910,124 +1909,8 @@ option.</span></p>
 	</ul>
 
 	</div>	</div>	</section>	
-			<script type="text/javascript" src="./proto_sms_lsc_1_files/bvapi.js"></script>
-			<script type="text/javascript">
-				$BV.configure("global", {
-				submissionContainerUrl: "/review/index.jsp"
-				});
 
-			    var bvapiUrl = "//display-stg.ugc.bazaarvoice.com/static/lakeside/en_US/bvapi.js";
-			    window.loadBazaarvoiceApi = function(callback) {
-			        if (window.$BV) {
-			            callback();
-			        } else {
-			            $.ajax({
-			                url: bvapiUrl,
-			                cache: true,
-			                dataType: "script",
-			                success: function() {
-			                    $($BV.docReady);
-			                    callback();
-			                }
-			            });
-			        }
-			    };
-				</script>
-<script type="text/javascript">
-</script>			
-		
 
-<script type="text/javascript">
-$BV.SI.trackTransactionPageView({
-	"orderId" : "o6546980173",
-	"tax" : "9.01",
-	"shipping" : "19.99",
-	"total" : "129.12",
-	"city" : "GURNEE",
-	"state" : "IL",
-	"country" : "USA",
-	"currency" : "USD",
-	"locale" : "en_US",
-	"items" : [
-		{
-				"sku" : "prod2010372",
-				"name" : "2-Head Outlet with USB Ports",
-				
-				"price" : "8.95",
-				"imageURL" : "http://stage.lakeside.com",
-				"quantity" : "1"
-				}
-				,{
-				"sku" : "prod2010622",
-				"name" : "Fashion Print Power Bank Chargers",
-				
-				"price" : "23.85",
-				"imageURL" : "http://stage.lakeside.com",
-				"quantity" : "3"
-				}
-				,{
-				"sku" : "prod1900161",
-				"name" : "22-Compartment Credit Card Wallets",
-				
-				"price" : "7.95",
-				"imageURL" : "http://stage.lakeside.com/images/product/51031_mn.jpg",
-				"quantity" : "1"
-				}
-				,{
-				"sku" : "prod1970177",
-				"name" : "Inspirational Checkbook Wallets",
-				
-				"price" : "6.95",
-				"imageURL" : "http://stage.lakeside.com/images/product/53318_mn.jpg",
-				"quantity" : "1"
-				}
-				,{
-				"sku" : "prod1940012",
-				"name" : "Sets of 2 Multifunction Stylus Pens",
-				
-				"price" : "5.95",
-				"imageURL" : "http://stage.lakeside.com",
-				"quantity" : "1"
-				}
-				,{
-				"sku" : "prod2230031",
-				"name" : "Humorous Head Masks",
-				
-				"price" : "16.95",
-				"imageURL" : "http://stage.lakeside.com/images/product/55459_mn.jpg",
-				"quantity" : "1"
-				}
-				,{
-				"sku" : "prod2230031",
-				"name" : "Humorous Head Masks",
-				
-				"price" : "16.95",
-				"imageURL" : "http://stage.lakeside.com/images/product/55459_mn.jpg",
-				"quantity" : "1"
-				}
-				,{
-				"sku" : "prod1230788",
-				"name" : "Set of 5 Jeweled StylusesPhone Charms",
-				
-				"price" : "7.62",
-				"imageURL" : "http://stage.lakeside.com/images/product/43430_mn.jpg",
-				"quantity" : "2"
-				}
-				,{
-				"sku" : "prod1790048",
-				"name" : "Set of 5 Stylus Pens",
-				
-				"price" : "4.95",
-				"imageURL" : "http://stage.lakeside.com/images/product/47861_mn.jpg",
-				"quantity" : "1"
-				}
-				
-	],
-	"userId" : "6555170228",
-	"email" : "skrause1@ltdcommodities.com",
-	"nickname" : ""
-});
-</script>
 <!-- proto styles -->
 <style>
 //body {-webkit-filter: grayscale(1);}
@@ -2169,12 +2052,25 @@ $(document).ready(function() {
  	jsMQcallback.add( ep_sms_size );
 
 	$(".ep_sms_mnu").addClass("ep_sms_or").clone().insertAfter(".ep_sms_mnu").addClass("ep_sms_cl").css("position","fixed").css("top","0").css("margin-top","0").css("z-index","500").removeClass("ep_sms_or").hide();
+	$(".sms-ux-circ")[0].style.zIndex = "-16";
+	siRR = setInterval(randRotate, 12000);
 
-$(".sms-ux-circ")[0].style.zIndex = "-16";
+	function randRotate(){
+		var nDegr = 0;
+		if( (Math.random()+.5|0) === 1 ){
+			nDegr = 0;
+		} else {
+			nDegr = 180;
+		}
+		TweenMax.to(".sms-ux-circ", 3, {
+		  rotation:nDegr, 
+		  transformOrigin:"50% 50%"
+		});
+		return true;
+	}
 
 	function ep_sms_size() {
 		$(".sms-ux-circ").css("left", ($(".ep_sms_or").css("width").slice(0, -2) - 184));
-		$(".sms-ux-circ").attr("src", $(".sms-ux-circ").attr("data-isrc") );
 	}
 
 	function ep_sms_mnu_top() {
