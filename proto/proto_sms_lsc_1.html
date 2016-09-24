@@ -2131,11 +2131,20 @@ cursor: pointer;
 $(document).ready(function() {
 	ep_sms_size();
 	var sms_ux = {
-		"su_state" : "MID_OPEN",
-		"TOP_OPEN"    : "TOP_OPEN",
-		"TOP_CLOSED"  : "TOP_CLOSED",
-		"MID_OPEN"    : "MID_OPEN",
-		"MID_CLOSED"  : "MID_CLOSED"
+		"su_state_loc" : "MID",
+		"su_state_tog" : "OPEN",
+		"MID"     : "MID",		
+		"TOP"     : "TOP",
+		"CLOSE"  : "CLOSE",
+		"OPEN"    : "OPEN",
+		togOPEN : function(){
+			$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
+			$(".js-sms-ux-caption").removeClass("sms-ux-caption__top").addClass("sms-ux-caption__mid");
+		},
+		togCLOSE : function(){
+			$(".sms-ux").removeClass("sms-ux__mid").addClass("sms-ux__top");
+			$(".js-sms-ux-caption").removeClass("sms-ux-caption__mid").addClass("sms-ux-caption__top");
+		},
 	};
 
 	jsMQcallback = $.Callbacks(), jsMQcurrent = "";
@@ -2169,24 +2178,41 @@ $(document).ready(function() {
 	}
 
 	function ep_sms_mnu_top() {
+//console.log( "sms_ux.su_state_loc | " + sms_ux.su_state_loc );		
+//console.log( "sms_ux.su_state_tog | " + sms_ux.su_state_tog );
 		var iPs=$('.ep_sms_or').offset(), iTp=iPs.top;               
-		if ($(window).scrollTop() >= (iTp)) {
+		if ($(window).scrollTop() >= (iTp)) {    //    TOP
 			oOrEl=$('.ep_sms_or'), iCoOrEl=oOrEl.offset(), iL=iCoOrEl.left, iW=oOrEl.css('width');
 			$('.ep_sms_cl').css('left',iL+'px').css('top',0).css('width',iW).show();
 			$('.ep_sms_or').css('visibility','hidden');
-			$(".sms-ux").removeClass("sms-ux__mid").addClass("sms-ux__top");
-			$(".js-sms-ux-caption").removeClass("sms-ux-caption__mid").addClass("sms-ux-caption__top");
-		} else {
+			$(".sms-ux-circ").css('visibility','visible');
+			sms_ux.su_state_loc = sms_ux.TOP;			
+			//if( sms_ux.su_state_tog !== sms_ux.OPEN ){
+				sms_ux.togCLOSE();
+			//}
+		} else {    //    MID
 			$('.ep_sms_cl').hide();
 			$('.ep_sms_or').css('visibility','visible');
-			$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
-			$(".js-sms-ux-caption").removeClass("sms-ux-caption__top").addClass("sms-ux-caption__mid");
+			$(".sms-ux-circ").css("visibility", "hidden");
+			sms_ux.su_state_loc = sms_ux.MID;
+			if( sms_ux.su_state_tog !== sms_ux.CLOSE ){
+				sms_ux.togOPEN();
+			}
 		}
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
 	$(".sms-ux-circ").on("click", function( e ){
-console.log( "sms_ux.su_state | " + sms_ux.su_state );
-		$(".sms-ux").removeClass("sms-ux__top").addClass("sms-ux__mid");
+console.log( " yikes 1 | " + sms_ux.su_state_loc );
+		if( sms_ux.su_state_loc === sms_ux.TOP ){
+console.log( " yikes 2" );
+			if( sms_ux.su_state_tog === sms_ux.CLOSE ){
+				sms_ux.su_state_tog = sms_ux.OPEN;
+				sms_ux.togOPEN();
+			} else {
+				sms_ux.su_state_tog = sms_ux.CLOSE;
+				sms_ux.togCLOSE();
+			}
+		}
 		e.preventDefault();
 	});
 
