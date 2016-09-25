@@ -2065,7 +2065,7 @@ $(document).ready(function() {
 
 	$(".ep_sms_mnu").addClass("ep_sms_or").clone().insertAfter(".ep_sms_mnu").addClass("ep_sms_cl").css("position","fixed").css("top","0").css("margin-top","0").css("z-index","500").removeClass("ep_sms_or").hide();
 	$(".sms-ux-circ")[0].style.zIndex = "-16";
-	siRR = setInterval(randRotate, 5000);
+	siRR = setInterval(randRotate, 5600);
 
 	function randRotate(){
 		if( sms_ux.su_state_loc === sms_ux.TOP_CLOSE ){
@@ -2075,9 +2075,10 @@ $(document).ready(function() {
 			} else {
 				nDegr = 180;
 			}
-			TweenMax.to(".sms-ux-circ", 3, {
+			TweenMax.to(".sms-ux-circ", 2, {
 			  rotation:nDegr, 
-			  transformOrigin:"50% 50%"
+			  transformOrigin:"50% 50%",
+			  ease:Back.easeInOut
 			});
 		}
 		return true;
