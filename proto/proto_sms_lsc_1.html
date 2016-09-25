@@ -2053,19 +2053,21 @@ $(document).ready(function() {
 
 	$(".ep_sms_mnu").addClass("ep_sms_or").clone().insertAfter(".ep_sms_mnu").addClass("ep_sms_cl").css("position","fixed").css("top","0").css("margin-top","0").css("z-index","500").removeClass("ep_sms_or").hide();
 	$(".sms-ux-circ")[0].style.zIndex = "-16";
-	siRR = setInterval(randRotate, 12000);
+	siRR = setInterval(randRotate, 4000);
 
 	function randRotate(){
-		var nDegr = 0;
-		if( (Math.random()+.5|0) === 1 ){
-			nDegr = 0;
-		} else {
-			nDegr = 180;
+		if( sms_ux.su_state_loc === sms_ux.TOP_CLOSE ){
+			var nDegr = 0;
+			if( (Math.random()+.5|0) === 1 ){
+				nDegr = 0;
+			} else {
+				nDegr = 180;
+			}
+			TweenMax.to(".sms-ux-circ", 3, {
+			  rotation:nDegr, 
+			  transformOrigin:"50% 50%"
+			});
 		}
-		TweenMax.to(".sms-ux-circ", 3, {
-		  rotation:nDegr, 
-		  transformOrigin:"50% 50%"
-		});
 		return true;
 	}
 
