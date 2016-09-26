@@ -321,7 +321,7 @@ function noThanks(isPayer) {
 				<span style="font-style: italic;">Easy and Convenient!</span>&nbsp; &nbsp; Instantly know when your order has shipped.
 			</p>
 <section class="row">
-	<div class="columns small-7 medium-8 large-8">
+	<div class="columns small-6 medium-6 large-6">
 		<output class="js-sms-ux-phone sms-ux-phone">
 			<from id="" class="" action="" method="" novalidate>
 				<input id="phone" name="phone" class="resp_input_brand" type="tel"
@@ -329,9 +329,14 @@ function noThanks(isPayer) {
 			</from>
 		</output>	
 	</div>
-	<div class="columns small-3 medium-2 large-2">
-		<a href="#" id="" class="">
+	<div class="columns small-2 medium-2 large-2 text-center">
+		<a href="#" id="" class="sms-ux-cmd text-center">
 			<img id="" class="" src="proto_sms_lsc_1_files/cmd_yes_text_me_lsc.svg">
+		</a>
+	</div>
+	<div class="columns small-2 medium-2 large-2 text-center">
+		<a href="#" id="" class="sms-ux-cmd text-center">
+			<img id="" class="" src="proto_sms_lsc_1_files/cmd_no_thanks_lsc.svg">
 		</a>
 	</div>
 </section>
@@ -1862,33 +1867,12 @@ option.</span></p>
 							"e_lead_form_submit" : "t",
 							"lead_type" : "request a free catalog confirm"
 						});
-					}
-					
-					
-				/* event 81 - Email Unsubscribe event */
-				if (window.location.href.indexOf("email_optout.jsp") != -1) {
-			
-					if($("#optOutEmail").length != 0){
-			
-					var emailvalue = $('#optOutEmail').val();
-			
-					if(emailvalue){
-						fireTealiumEvent({
-							"e_email_unsub" : "t"
-						});
-					 }
-					}
-				}					
-					
-					
+					}				
 				});
 			</script>
-		
 	
 	<a href="https://stage.lakeside.com/checkout/order_commit.jsp#" class="to-top radius button" style="display: none;"></a>
-
 	
-
 	<!-- footer modal -->
 	<div id="footerModal" class="reveal-modal" data-reveal="">
 		<a class="close-reveal-modal">×</a>
@@ -1962,7 +1946,7 @@ option.</span></p>
 }
 .sms-ux-caption__mid {
 	position: absolute;
-	width: 60vw;
+	xxxxxxxxxxwidth: 60vw;
 	padding: 8px;
 }
 .sms-ux-caption__top {
@@ -1997,10 +1981,14 @@ top: -88px;
 z-index: 1002;
 cursor: pointer;
 }
+.sms-ux-cmd {
+	position: absolute;
+    top: -22px;
+}
 @media only screen and (max-width: 47.9375em) {
 	/* small */
 	.sms-ux-caption__mid {
-		width: 60vw;
+		99999999width: 60vw;
 	}
 	.sms-ux-caption__mid > p {
 		font-size: 14px !important;
