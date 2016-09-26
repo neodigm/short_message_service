@@ -318,14 +318,22 @@ function noThanks(isPayer) {
 	<section class="sms-ux">
 		<aside class="js-sms-ux-caption sms-ux-caption__top">
 			<p class="caption--p__roboto">
-				<span style="font-style: italic;">Easy and Convenient</span>&nbsp; Know instantly when your order has shipped.
+				<span style="font-style: italic;">Easy and Convenient!</span>&nbsp; &nbsp; Instantly know when your order has shipped.
 			</p>
-			<output class="js-sms-ux-phone sms-ux-phone">
-				<from id="" class="" action="" method="" novalidate>
-					<input id="phone" name="phone" class="resp_input_brand" type="tel"
-				spellcheck="false" placeholder="Mobile Phone Number" autocomplete="off" autocapitalize="off" aria-label="Mobile Phone Number" title="Mobile Phone Number" maxlength="19"  value="" autocorrect="off" aria-required="true">
-				</from>
-			</output>			
+<section class="row">
+	<div class="columns small-5">
+		<output class="js-sms-ux-phone sms-ux-phone">
+			<from id="" class="" action="" method="" novalidate>
+				<input id="phone" name="phone" class="resp_input_brand" type="tel"
+			spellcheck="false" placeholder="Mobile Phone Number" autocomplete="off" autocapitalize="off" aria-label="Mobile Phone Number" title="Mobile Phone Number" maxlength="19"  value="" autocorrect="off" aria-required="true">
+			</from>
+		</output>	
+	</div>
+	<div class="columns small-5">
+<img id="" class="" src="proto_sms_lsc_1_files/cmd_yes_text_me_lsc.svg">	
+	</div>
+</section>
+		
 		</aside>
 
 		<img id="" class="sms-ux-circ" src="proto_sms_lsc_1_files/sms_hmu_circ_lsc.svg">
@@ -1930,7 +1938,7 @@ option.</span></p>
 }
 .caption--p__roboto > span{
 	font-style: italic;
-	color: #00FF48;
+	color: #edba08;
 }
 .caption--p__rocksalt{
 	font-family: "Rock Salt", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1952,7 +1960,7 @@ option.</span></p>
 }
 .sms-ux-caption__mid {
 	position: absolute;
-	width: 44vw;
+	width: 60vw;
 	padding: 8px;
 }
 .sms-ux-caption__top {
@@ -1969,15 +1977,15 @@ background-color: #9c4a62;
 z-index: 1000;
 }
 .sms-ux__top {
--webkit-transition: height 1.1s;
--moz-transition: height 1.1s;
-transition: height 1.1s;
+-webkit-transition: height .9s;
+-moz-transition: height .9s;
+transition: height .9s;
 height: 48px;
 }
 .sms-ux__mid {
--webkit-transition: height 1.1s;
--moz-transition: height 1.1s;
-transition: height 1.1s;
+-webkit-transition: height .9s;
+-moz-transition: height .9s;
+transition: height .9s;
 height: 176px;
 overflow: hidden;
 }
@@ -1990,7 +1998,7 @@ cursor: pointer;
 @media only screen and (max-width: 47.9375em) {
 	/* small */
 	.sms-ux-caption__mid {
-		width: 40vw;
+		width: 60vw;
 	}
 	.sms-ux-caption__mid > p {
 		font-size: 14px !important;
@@ -2065,7 +2073,7 @@ $(document).ready(function() {
 
 	$(".ep_sms_mnu").addClass("ep_sms_or").clone().insertAfter(".ep_sms_mnu").addClass("ep_sms_cl").css("position","fixed").css("top","0").css("margin-top","0").css("z-index","500").removeClass("ep_sms_or").hide();
 	$(".sms-ux-circ")[0].style.zIndex = "-16";
-	siRR = setInterval(randRotate, 5600);
+	siRR = setInterval(randRotate, 4600);
 
 	function randRotate(){
 		if( sms_ux.su_state_loc === sms_ux.TOP_CLOSE ){
