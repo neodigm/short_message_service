@@ -317,8 +317,8 @@ function noThanks(isPayer) {
 <section class="ep_sms_mnu ep_sms_or">
 	<section class="sms-ux">
 		<aside class="js-sms-ux-caption sms-ux-caption__top">
-			<p class="caption--p__roboto">
-				<span style="font-style: italic;">Easy and Convenient!</span>&nbsp; &nbsp; Instantly know when your order has shipped.
+			<p class="caption--p__roboto" style="margin-bottom: 8px;">
+				<span style="font-style: italic;">Easy and Convenient!</span>&nbsp; &nbsp; Instantly know when your<br>order has shipped.
 			</p>
 <section class="row">
 	<div class="columns small-5 medium-5 large-5">
@@ -329,8 +329,8 @@ function noThanks(isPayer) {
 			</from>
 		</output>	
 	</div>
-	<div class="columns small-2 medium-2 large-2 text-center">
-		<a href="#" id="" class="sms-ux-cmd text-center">
+	<div class="columns small-2 medium-2 large-2 text-left">
+		<a href="#" id="" class="sms-ux-cmd text-left">
 			<img id="" class="" src="proto_sms_lsc_1_files/cmd_yes_text_me_lsc.svg" style="max-height: 76px; max-width: 76px">
 		</a>
 	</div>
@@ -1963,15 +1963,15 @@ background-color: #9c4a62;
 z-index: 1000;
 }
 .sms-ux__top {
--webkit-transition: height .6s;
--moz-transition: height .6s;
-transition: height .6s;
+-webkit-transition: height .2s;
+-moz-transition: height .2s;
+transition: height .2s;
 height: 48px;
 }
 .sms-ux__mid {
--webkit-transition: height .6s;
--moz-transition: height .6s;
-transition: height .6s;
+-webkit-transition: height .2s;
+-moz-transition: height .2s;
+transition: height .2s;
 height: 176px;
 overflow: hidden;
 }
@@ -2063,7 +2063,7 @@ $(document).ready(function() {
 
 	$(".ep_sms_mnu").addClass("ep_sms_or").clone().insertAfter(".ep_sms_mnu").addClass("ep_sms_cl").css("position","fixed").css("top","0").css("margin-top","0").css("z-index","500").removeClass("ep_sms_or").hide();
 	$(".sms-ux-circ")[0].style.zIndex = "-16";
-	siRR = setInterval(randRotate, 3800);
+	siRR = setInterval(randRotate, 3000);
 
 	function randRotate(){
 		if( sms_ux.su_state_loc === sms_ux.TOP_CLOSE ){
