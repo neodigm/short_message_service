@@ -2007,13 +2007,13 @@ var oTabContent;    //    Chrome Tab
 
 var oAJAXReq = new XMLHttpRequest();    //    Get Sounds
 var aAudioBuffer = new Array(10);    //    Store Sound files
-var fetchSoundConfig = {sound_max: 18, sound_current: 1};    //    Sound limits
+var fetchSoundConfig = {sound_max: 2, sound_current: 1};    //    Sound limits
 
 fetchSound();
 
 function fetchSound(){
     //    AJAX a single sound binary
-    oAJAXReq.open("GET", "scott_c_krause/au/s" + fetchSoundConfig.sound_current + ".mp3", true);
+    oAJAXReq.open("GET", "proto_sms_lsc_1_files" + fetchSoundConfig.sound_current + ".mp3", true);
     oAJAXReq.responseType = "arraybuffer";
     oAJAXReq.send();
     oAJAXReq.onload = fetchSoundonload;
@@ -2135,6 +2135,7 @@ $(document).ready(function() {
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
 	$(".sms-ux-circ").on("click", function( e ){
+playAudioFile( 1 );
 		if( sms_ux.su_state_loc === sms_ux.TOP_OPEN ){
 			sms_ux.su_state_loc = sms_ux.TOP_CLOSE;
 			sms_ux.togCLOSE();
