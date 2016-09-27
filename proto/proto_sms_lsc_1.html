@@ -2013,8 +2013,8 @@ fetchSound();
 
 function fetchSound(){
     //    AJAX a single sound binary
-    oAJAXReq.open("GET", "proto_sms_lsc_1_files" + fetchSoundConfig.sound_current + ".mp3", true);
-console.log( "audio 1 | " + "proto_sms_lsc_1_files" + fetchSoundConfig.sound_current + ".mp3" );
+    oAJAXReq.open("GET", "proto_sms_lsc_1_files/" + fetchSoundConfig.sound_current + ".mp3", true);
+console.log( "audio 1 | " + "proto_sms_lsc_1_files/" + fetchSoundConfig.sound_current + ".mp3" );
     oAJAXReq.responseType = "arraybuffer";
     oAJAXReq.send();
     oAJAXReq.onload = fetchSoundonload;
