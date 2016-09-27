@@ -2002,6 +2002,51 @@ cursor: pointer;
     //document.querySelector('.scrollpos').innerHTML = data.curTop;
     //}
     //});
+var oAudContx = new AudioContext();    //    HTML5 Audio
+var oTabContent;    //    Chrome Tab
+
+var oAJAXReq = new XMLHttpRequest();    //    Get Sounds
+var aAudioBuffer = new Array(10);    //    Store Sound files
+var fetchSoundConfig = {sound_max: 18, sound_current: 1};    //    Sound limits
+
+fetchSound();
+
+function fetchSound(){
+    //    AJAX a single sound binary
+    oAJAXReq.open("GET", "scott_c_krause/au/s" + fetchSoundConfig.sound_current + ".mp3", true);
+    oAJAXReq.responseType = "arraybuffer";
+    oAJAXReq.send();
+    oAJAXReq.onload = fetchSoundonload;
+}
+
+function fetchSoundonload() {
+    //    The audio file has loaded via AJAX
+    oAudContx.decodeAudioData(oAJAXReq.response, function (decAudBuf) {
+        aAudioBuffer[ fetchSoundConfig.sound_current ] = decAudBuf;
+        fetchSoundConfig.sound_current = fetchSoundConfig.sound_current + 1;
+        if(fetchSoundConfig.sound_current <= fetchSoundConfig.sound_max){
+            oAJAXReq = new XMLHttpRequest();
+            oAJAXReq.responseType = "arraybuffer";
+            fetchSound( fetchSoundConfig.sound_current );
+        }
+    });
+};
+
+function playAudioFile( nSound ) {
+    //    Play MP3 if sound toggle is true
+
+        var oSrc = oAudContx.createBufferSource();
+        var volume = oAudContx.createGain();
+        oSrc.buffer = aAudioBuffer[nSound];
+        volume.gain.value = 0.0;
+        oSrc.connect(volume);  
+        volume.connect(oAudContx.destination);
+        oSrc.connect(oAudContx.destination);
+        volume.gain.value = 0.0;
+        oSrc.start(oAudContx.currentTime);
+ 
+};
+
 $(document).ready(function() {
 	ep_sms_size();
 	var sms_ux = {
