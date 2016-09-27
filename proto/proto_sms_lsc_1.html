@@ -2035,7 +2035,7 @@ function fetchSoundonload() {
 
 function playAudioFile( nSound ) {
     //    Play MP3 if sound toggle is true
-console.log( "audio 1 | " + nSound );
+console.log( "audio 2 | " + nSound );
         var oSrc = oAudContx.createBufferSource();
         var volume = oAudContx.createGain();
         oSrc.buffer = aAudioBuffer[nSound];
@@ -2136,6 +2136,7 @@ $(document).ready(function() {
 	}
 	oScrID = setInterval(ep_sms_mnu_top, 96);
 	$(".sms-ux-circ").on("click", function( e ){
+console.log( "audio 3 | " + "yikes" );
 playAudioFile( 1 );
 		if( sms_ux.su_state_loc === sms_ux.TOP_OPEN ){
 			sms_ux.su_state_loc = sms_ux.TOP_CLOSE;
