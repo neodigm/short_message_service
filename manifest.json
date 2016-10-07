@@ -1,5 +1,6 @@
 {
 	"name": "The Lakeside Collection",
+	"start_url": "/index.html",
 	"icons": [
 		{
 			"src": "../android-chrome-192x192.png",
