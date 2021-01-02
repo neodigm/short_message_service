@@ -1,5 +1,7 @@
 [![License: BSD](https://badgen.net/badge/license/BSD/orange)](https://opensource.org/licenses/BSD-3-Clause)
 
+[Responsive Proto](https://thescottkrause.com/utils/neodigm55-mobile-resizer/?vp=m&uri=https://neodigm.github.io/short_message_service/proto/proto_sms_lsc_1.html)
+
 [SMS Prototype 1](https://neodigm.github.io/short_message_service/proto/proto_sms_lsc_1.html)
 ---
 
