@@ -5,6 +5,7 @@
 *.ts linguist-detectable=true
 *.go linguist-detectable=true
 *.js linguist-language=TypeScript
+*.vue linguist-language=TypeScript
 
 # Auto detect text files and perform LF normalization
 * text=auto
