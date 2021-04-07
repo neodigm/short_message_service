@@ -5,6 +5,8 @@
 [SMS Prototype 1](https://neodigm.github.io/short_message_service/proto/proto_sms_lsc_1.html)
 ---
 
+Clockwork Clever 🍭 Tricknology
+
 #
 [Portfolio Blog](https://www.theScottKrause.com) |
 [🦄 Résumé](https://thescottkrause.com/Arcanus_Scott_C_Krause_2020.pdf) |
