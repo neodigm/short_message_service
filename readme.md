@@ -7,16 +7,15 @@ Clockwork Clever 🍭 Tricknology | Microinteraction with Greensock Animation
 
 #
 [Portfolio Blog](https://www.theScottKrause.com) |
-[🦄 Résumé](https://thescottkrause.com/Arcanus_Scott_C_Krause_2021.pdf) |
+[🦄 Résumé](https://thescottkrause.com/Arcanus_Scott_C_Krause_2023.pdf) |
 [NPM](https://www.npmjs.com/~neodigm) |
 [Github](https://github.com/neodigm) |
 [LinkedIn](https://www.linkedin.com/in/neodigm55/) |
 [Gists](https://gist.github.com/neodigm?direction=asc&sort=created) |
 [Salesforce](https://trailblazer.me/id/skrause) |
-[Code Pen](https://codepen.io/neodigm24) |
-[Machvive](https://machvive.com/) |
-[Arcanus 55](https://www.arcanus55.com/) |
-[Repl](https://repl.it/@neodigm) |
+[Code Pen](https://codepen.io/neodigm24/pen/oNGqzyO) |
+[Machvive](https://www.machfivemarketing.com/accelerators/google_analytics_ga4_migration/) |
+[Arcanus 55](https://www.arcanus55.com/?trusted55=A55PV2) |
 [Twitter](https://twitter.com/neodigm24) |
 [Keybase](https://keybase.io/neodigm) |
 [Docker](https://hub.docker.com/u/neodigm) |
