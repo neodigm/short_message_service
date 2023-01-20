@@ -3,7 +3,7 @@
 [SMS Prototype 1](https://neodigm.github.io/short_message_service/proto/proto_sms_lsc_1.html)
 ---
 
-Clockwork Clever 🍭 [Tricknology[(https://www.thescottkrause.com/emerging_tech/curated-creative-links/) | Microinteraction with Greensock Animation
+Clockwork Clever 🍭 [Tricknology](https://www.thescottkrause.com/emerging_tech/curated-creative-links/) | Microinteraction with Greensock Animation
 
 #
 [Portfolio Blog](https://www.theScottKrause.com) |
