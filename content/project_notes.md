@@ -34,3 +34,5 @@ web fonts / FA
 local storage / chrome storage
 
 Cloudflare UX PWA SolidJS Lit ThreeJS Vue ✨HTMX Rust WASM
+
+AI Agents Chat UX PWA SolidJS Lit ThreeJS Vue ✨HTMX Rust WASM
