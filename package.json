@@ -1,7 +1,7 @@
 {
   "name": "scott_c_krause_neodigm",
   "version": "5.5.2",
-  "description": "UX artisan ⚡ illustrator ⚡ front-end engineer and Poet",
+  "description": "UX artisan ⚡ illustrator ⚡ front-end engineer and Poet Push SSE ✨ optimization 🗝️ security 🍭 Stream Sync Engage",
   "main": "vue_threejs_wasm.js",
   "scripts": {
     "test": "e2e.js"
@@ -51,7 +51,7 @@
     "bootstrap": "^5.0.0",
     "chai": "^4.2.0",
     "chalk": "^4.1.0",
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0",
     "classnames": "^2.2.6",
     "colors": "^1.4.0",
     "commander": "^6.1.0",
