@@ -7,7 +7,7 @@
 *.js linguist-language=TypeScript
 *.vue linguist-language=TypeScript
 
-# Auto detect text files and perform LF normalization
+# TypeScript ⚡ WASM ✨ Vue.JS 🚀 Svelte
 * text=auto
 # Custom for Visual Studio
 *.cs     diff=csharp
